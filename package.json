@@ -56,5 +56,8 @@
       "@lavamoat/preinstall-always-fail": false,
       "sharp": true
     }
+  },
+  "dependencies": {
+    "@klever/sdk": "^4.2.2"
   }
 }
