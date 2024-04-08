@@ -1,5 +1,7 @@
 import type { OnRpcRequestHandler } from '@metamask/snaps-sdk';
-import { getAddress } from './rpc';
+
+import { getAddress, signMessage } from './rpc';
+import type { SignMessageParams } from './types';
 
 /**
  * Handle incoming JSON-RPC requests, sent through `wallet_invokeSnap`.
@@ -12,11 +14,17 @@ import { getAddress } from './rpc';
  * @throws If the request method is not valid for this snap.
  */
 export const onRpcRequest: OnRpcRequestHandler = async ({
+  origin,
   request,
 }) => {
   switch (request.method) {
     case 'klv_getAddress':
       return await getAddress();
+    case 'klv_signMessage': {
+      const params = request.params as SignMessageParams;
+      params.origin = origin;
+      return await signMessage(params);
+    }
     default:
       throw new Error('Method not found.');
   }
