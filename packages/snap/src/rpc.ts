@@ -1,7 +1,9 @@
+import { utils } from '@klever/sdk';
+
 import { confirmSignMessage } from './dialogs';
 import { toHex } from './hex-utils';
 import { getSdkAccount } from './sdk';
-import type { SignMessageParams } from './types';
+import type { SignMessageParams, ValidateSignatureParams } from './types';
 
 export const getAddress = async (): Promise<string> => {
   const account = await getSdkAccount();
@@ -25,4 +27,12 @@ export const signMessage = async (
 
   const account = await getSdkAccount();
   return await account.signMessage(toHex(params.message));
+};
+
+export const validateSignature = async (params: ValidateSignatureParams) => {
+  return await utils.validateSignature(
+    toHex(params.message),
+    params.signature,
+    params.address,
+  );
 };

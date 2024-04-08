@@ -1,7 +1,8 @@
 import type { OnRpcRequestHandler } from '@metamask/snaps-sdk';
 
-import { getAddress, signMessage } from './rpc';
+import { getAddress, signMessage, validateSignature } from './rpc';
 import type { SignMessageParams } from './types';
+import { ValidateSignatureParams } from './types';
 
 /**
  * Handle incoming JSON-RPC requests, sent through `wallet_invokeSnap`.
@@ -25,6 +26,8 @@ export const onRpcRequest: OnRpcRequestHandler = async ({
       params.origin = origin;
       return await signMessage(params);
     }
+    case 'klv_validateSignature':
+      return await validateSignature(request.params as ValidateSignatureParams);
     default:
       throw new Error('Method not found.');
   }
