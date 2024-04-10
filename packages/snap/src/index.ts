@@ -1,3 +1,4 @@
+import { web } from '@klever/sdk';
 import type { OnRpcRequestHandler } from '@metamask/snaps-sdk';
 
 import {
@@ -15,7 +16,6 @@ import type {
   BuildTransactionParams,
   ValidateSignatureParams,
 } from './types';
-import { web } from '@klever/sdk';
 
 /**
  * Handle incoming JSON-RPC requests, sent through `wallet_invokeSnap`.
@@ -30,7 +30,7 @@ import { web } from '@klever/sdk';
 export const onRpcRequest: OnRpcRequestHandler = async ({
   origin,
   request,
-}) => {
+}): Promise<any> => {
   if (web.isKleverWebActive()) {
     await web.initialize();
   }

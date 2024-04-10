@@ -1,4 +1,8 @@
-import { IContractRequest, ITransaction, ITxOptionsRequest } from '@klever/sdk';
+import type {
+  IContractRequest,
+  ITransaction,
+  ITxOptionsRequest,
+} from '@klever/sdk';
 
 export type SignMessageParams = {
   message: string;

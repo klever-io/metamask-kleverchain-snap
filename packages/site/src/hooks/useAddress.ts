@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+
 import { useInvokeSnap } from './useInvokeSnap';
 
 export const useAddress = (isSnapInstalled: boolean) => {
@@ -7,10 +8,11 @@ export const useAddress = (isSnapInstalled: boolean) => {
 
   useEffect(() => {
     if (isSnapInstalled) {
+      // eslint-disable-next-line no-void
       void (async () => {
         const addressResponse = await invokeSnap({ method: 'klv_getAddress' });
         if (addressResponse) {
-          setAddress(addressResponse);
+          setAddress(addressResponse as string);
         }
       })();
     }

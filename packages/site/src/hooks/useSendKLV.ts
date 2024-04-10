@@ -49,18 +49,18 @@ export const useSendKLV = () => {
         });
         setLastTxId(broadcasted.data.txsHashes[0]);
       }
-    } catch (err: unknown) {
-      if (err instanceof Error) {
-        setError(err.message);
-      } else if (typeof err === 'string') {
-        setError(err);
+    } catch (exception: unknown) {
+      if (exception instanceof Error) {
+        setError(exception.message);
+      } else if (typeof exception === 'string') {
+        setError(exception);
       } else {
-        setError(`An unknown error occurred: ${JSON.stringify(err)}`);
+        setError(`An unknown error occurred: ${JSON.stringify(exception)}`);
       }
     } finally {
       setIsLoading(false);
     }
-  }
+  };
 
   return { lastTxId, isLoading, error, sendKLV };
 };

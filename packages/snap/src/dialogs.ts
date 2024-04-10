@@ -55,9 +55,11 @@ export const confirmSignTransaction = async (
       contractsData.push(divider());
       contractsData.push(heading(`${contractType} Contract`));
       for (const key in contract.parameter) {
-        contractsData.push(
-          row(formatKey(key), text(contract.parameter[key].toString())),
-        );
+        if (Object.prototype.hasOwnProperty.call(contract.parameter, key)) {
+          contractsData.push(
+            row(formatKey(key), text(contract.parameter[key].toString())),
+          );
+        }
       }
     }
   }

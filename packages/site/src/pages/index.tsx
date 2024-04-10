@@ -87,6 +87,7 @@ const Index = () => {
     sendKLV,
   } = useSendKLV();
 
+  // eslint-disable-next-line @typescript-eslint/no-misused-promises
   const handleSendKLV: React.FormEventHandler<HTMLFormElement> = async (
     ev,
   ): Promise<void> => {
@@ -98,6 +99,7 @@ const Index = () => {
 
   const { signMessage, lastSignature } = useSignMessage();
 
+  // eslint-disable-next-line @typescript-eslint/no-misused-promises
   const handleSignMessage: React.FormEventHandler<HTMLFormElement> = async (
     ev,
   ): Promise<void> => {

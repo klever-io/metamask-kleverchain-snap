@@ -1,4 +1,5 @@
 import { utils } from '@klever/sdk';
+import type { IDecodedTransaction } from '@klever/sdk/dist/types/lib/types/dtos';
 
 import { confirmSignMessage, confirmSignTransaction } from './dialogs';
 import { toHex } from './hex-utils';
@@ -10,8 +11,6 @@ import type {
   BuildTransactionParams,
   SignTransactionParams,
 } from './types';
-
-import { IDecodedTransaction } from '@klever/sdk/dist/types/lib/types/dtos';
 
 export const getAddress = async (): Promise<string> => {
   const account = await getSdkAccount();
@@ -61,6 +60,8 @@ export const signTransaction = async (params: SignTransactionParams) => {
 
   // some versions of klever sdk already return the tx instead of data
   // this code block puts the tx into the data field to be compatible with IDecodedTransaction object
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   if (!decodedTx.data) {
     decodedTx = {
       data: decodedTx,
