@@ -1,8 +1,21 @@
 import type { OnRpcRequestHandler } from '@metamask/snaps-sdk';
 
-import { getAddress, signMessage, validateSignature } from './rpc';
-import type { SignMessageParams } from './types';
-import { ValidateSignatureParams } from './types';
+import {
+  broadcastTransactions,
+  buildTransaction,
+  getAddress,
+  signMessage,
+  signTransaction,
+  validateSignature,
+} from './rpc';
+import type {
+  SignMessageParams,
+  SignTransactionParams,
+  BroadcastTransactionsParams,
+  BuildTransactionParams,
+  ValidateSignatureParams,
+} from './types';
+import { web } from '@klever/sdk';
 
 /**
  * Handle incoming JSON-RPC requests, sent through `wallet_invokeSnap`.
@@ -18,6 +31,9 @@ export const onRpcRequest: OnRpcRequestHandler = async ({
   origin,
   request,
 }) => {
+  if (web.isKleverWebActive()) {
+    await web.initialize();
+  }
   switch (request.method) {
     case 'klv_getAddress':
       return await getAddress();
@@ -28,6 +44,19 @@ export const onRpcRequest: OnRpcRequestHandler = async ({
     }
     case 'klv_validateSignature':
       return await validateSignature(request.params as ValidateSignatureParams);
+    case 'klv_buildTransaction':
+      return await buildTransaction(
+        request.params as unknown as BuildTransactionParams,
+      );
+    case 'klv_signTransaction': {
+      const params = request.params as unknown as SignTransactionParams;
+      params.origin = origin;
+      return await signTransaction(params);
+    }
+    case 'klv_broadcastTransactions':
+      return await broadcastTransactions(
+        request.params as unknown as BroadcastTransactionsParams,
+      );
     default:
       throw new Error('Method not found.');
   }
