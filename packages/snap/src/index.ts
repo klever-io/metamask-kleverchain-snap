@@ -1,5 +1,21 @@
+import { web } from '@klever/sdk';
 import type { OnRpcRequestHandler } from '@metamask/snaps-sdk';
-import { panel, text } from '@metamask/snaps-sdk';
+
+import {
+  broadcastTransactions,
+  buildTransaction,
+  getAddress,
+  signMessage,
+  signTransaction,
+  validateSignature,
+} from './rpc';
+import type {
+  SignMessageParams,
+  SignTransactionParams,
+  BroadcastTransactionsParams,
+  BuildTransactionParams,
+  ValidateSignatureParams,
+} from './types';
 
 /**
  * Handle incoming JSON-RPC requests, sent through `wallet_invokeSnap`.
@@ -14,22 +30,33 @@ import { panel, text } from '@metamask/snaps-sdk';
 export const onRpcRequest: OnRpcRequestHandler = async ({
   origin,
   request,
-}) => {
+}): Promise<any> => {
+  if (web.isKleverWebActive()) {
+    await web.initialize();
+  }
   switch (request.method) {
-    case 'hello':
-      return snap.request({
-        method: 'snap_dialog',
-        params: {
-          type: 'confirmation',
-          content: panel([
-            text(`Hello, **${origin}**!`),
-            text('This custom confirmation is just for display purposes.'),
-            text(
-              'But you can edit the snap source code to make it do something, if you want to!',
-            ),
-          ]),
-        },
-      });
+    case 'klv_getAddress':
+      return await getAddress();
+    case 'klv_signMessage': {
+      const params = request.params as SignMessageParams;
+      params.origin = origin;
+      return await signMessage(params);
+    }
+    case 'klv_validateSignature':
+      return await validateSignature(request.params as ValidateSignatureParams);
+    case 'klv_buildTransaction':
+      return await buildTransaction(
+        request.params as unknown as BuildTransactionParams,
+      );
+    case 'klv_signTransaction': {
+      const params = request.params as unknown as SignTransactionParams;
+      params.origin = origin;
+      return await signTransaction(params);
+    }
+    case 'klv_broadcastTransactions':
+      return await broadcastTransactions(
+        request.params as unknown as BroadcastTransactionsParams,
+      );
     default:
       throw new Error('Method not found.');
   }

@@ -4,13 +4,14 @@
   "proposedName": "Kleverchain",
   "repository": {
     "type": "git",
-    "url": "https://github.com/klever-io/metamask-kleverchain-snap"
+    "url": "https://github.com/MetaMask/template-snap-monorepo.git"
   },
   "source": {
-    "shasum": "TwVBeJ/PL4uARBEFZmgJukYd3XWyTbilkOPhtdg+GvU=",
+    "shasum": "PkMTKsC0ytTgp36wF5nXmcMW6dYCM2XpAcAhySnAyNI=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",
+        "iconPath": "images/icon.svg",
         "packageName": "snap",
         "registry": "https://registry.npmjs.org/"
       }
