@@ -1,12 +1,116 @@
-# TypeScript Example Snap
+# Kleverchain Snap (beta)
 
-This snap demonstrates how to develop a snap with TypeScript. It is a simple
-snap that displays a confirmation dialog when the `hello` JSON-RPC method is
-called.
+This snap acts as a interface between the Kleverchain JS SDK and Metamask.
 
-## Testing
+## Supported rpc methods:
 
-The snap comes with some basic tests, to demonstrate how to write tests for
-snaps. To test the snap, run `yarn test` in this directory. This will use
-[`@metamask/snaps-jest`](https://github.com/MetaMask/snaps/tree/main/packages/snaps-jest)
-to run the tests in `src/index.test.ts`.
+### klv_getAddress:
+
+Returns the address of the current account.
+
+Returns:
+
+```
+string
+```
+
+### klv_signMessage:
+
+Signs a message with the current account.
+
+Params:
+
+```json
+{
+  "message": "string"
+}
+```
+
+Returns:
+
+```
+string
+```
+
+### klv_validateSignature:
+
+Validates a signature.
+
+Params:
+
+```json
+{
+  "message": "string",
+  "signature": "string",
+  "address": "string"
+}
+```
+
+Returns:
+
+```
+bool
+```
+
+### klv_buildTransaction:
+
+Builds a Kleverchain transaction object.
+
+Params: (for more information about the fields, check the [Kleverchain SDK JS](https://github.com/klever-io/kleverchain-js))
+
+```json
+{
+  "contracts": "IContractRequest[]",
+  "txData": "string[]",
+  "options": "ITxOptionsRequest"
+}
+```
+
+Returns:
+
+```
+ITransaction
+```
+
+### klv_signTransaction:
+
+Signs a transaction object.
+
+Params:
+
+```json
+{
+  "transaction": "ITransaction"
+}
+```
+
+Returns:
+
+```
+ITransaction
+```
+
+### klv_broadcastTransactions:
+
+Broadcasts a set of transaction objects to the network.
+
+Params:
+
+```json
+{
+  "transactions": "ITransaction[]"
+}
+```
+
+Returns:
+
+```
+IBroadcastResponse
+```
+
+## Unsupported features
+
+These are some features that we are aware of the importance but are not supported yet:
+
+- Multiple accounts (currently every action leads to the account on vault 0)
+- Network change
