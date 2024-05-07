@@ -1,6 +1,6 @@
-# TypeScript Example Snap Front-end
+# Kleverchain Front-end example
 
-This project was bootstrapped with [Gatsby](https://www.gatsbyjs.com/).
+This is a simple front-end example that provides basic UI actions to test the Kleverchain snap.
 
 ## Available Scripts
 
