@@ -1,10 +1,11 @@
 {
-  "name": "snap",
+  "name": "@klever/kleverchain-snap",
   "version": "0.1.0",
-  "description": "The 'Hello, world!' of MetaMask Snaps, now written in TypeScript.",
+  "private": false,
+  "description": "A MetaMask Snap for KleverChain",
   "repository": {
     "type": "git",
-    "url": "https://github.com/MetaMask/template-snap-monorepo.git"
+    "url": "git+https://github.com/klever-io/metamask-kleverchain-snap.git"
   },
   "license": "(MIT-0 OR Apache-2.0)",
   "main": "./dist/bundle.js",
@@ -65,5 +66,10 @@
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
-  }
+  },
+  "author": "nickgs <nicollas@klever.io>",
+  "bugs": {
+    "url": "https://github.com/klever-io/metamask-kleverchain-snap/issues"
+  },
+  "homepage": "https://github.com/klever-io/metamask-kleverchain-snap#readme"
 }

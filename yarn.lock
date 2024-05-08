@@ -2445,6 +2445,43 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< Updated upstream
+=======
+"@klever/kleverchain-snap@workspace:packages/snap":
+  version: 0.0.0-use.local
+  resolution: "@klever/kleverchain-snap@workspace:packages/snap"
+  dependencies:
+    "@jest/globals": ^29.5.0
+    "@klever/sdk": ^4.2.2
+    "@metamask/auto-changelog": ^3.4.4
+    "@metamask/eslint-config": ^12.2.0
+    "@metamask/eslint-config-jest": ^12.1.0
+    "@metamask/eslint-config-nodejs": ^12.1.0
+    "@metamask/eslint-config-typescript": ^12.1.0
+    "@metamask/key-tree": ^9.0.0
+    "@metamask/snaps-cli": ^6.1.0
+    "@metamask/snaps-jest": ^6.0.2
+    "@metamask/snaps-sdk": ^3.2.0
+    "@typescript-eslint/eslint-plugin": ^5.42.1
+    "@typescript-eslint/parser": ^5.42.1
+    buffer: ^6.0.3
+    eslint: ^8.45.0
+    eslint-config-prettier: ^8.5.0
+    eslint-plugin-import: ~2.26.0
+    eslint-plugin-jest: ^27.1.5
+    eslint-plugin-jsdoc: ^41.1.2
+    eslint-plugin-n: ^15.7.0
+    eslint-plugin-prettier: ^4.2.1
+    eslint-plugin-promise: ^6.1.1
+    jest: ^29.5.0
+    prettier: ^2.7.1
+    prettier-plugin-packagejson: ^2.2.11
+    rimraf: ^3.0.2
+    ts-jest: ^29.1.0
+    typescript: ^4.7.4
+  languageName: unknown
+  linkType: soft
+
 "@klever/kleverweb@npm:^1.1.0":
   version: 1.3.0
   resolution: "@klever/kleverweb@npm:1.3.0"
@@ -2467,6 +2504,7 @@ __metadata:
   languageName: node
   linkType: hard
 
+>>>>>>> Stashed changes
 "@lavamoat/aa@npm:^4.0.0":
   version: 4.0.0
   resolution: "@lavamoat/aa@npm:4.0.0"
@@ -3303,7 +3341,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@noble/ed25519@npm:^1.6.0, @noble/ed25519@npm:^1.7.1":
+"@noble/ed25519@npm:^1.6.0":
   version: 1.7.3
   resolution: "@noble/ed25519@npm:1.7.3"
   checksum: 45169927d51de513e47bbeebff3a603433c4ac7579e1b8c5034c380a0afedbe85e6959be3d69584a7a5ed6828d638f8f28879003b9bb2fb5f22d8aa2d88fd5fe
@@ -3965,57 +4003,6 @@ __metadata:
     "@pnpm/network.ca-file": ^1.0.1
     config-chain: ^1.1.11
   checksum: d64aa4464be584caa855eafa8f109509390489997e36d602d6215784e2973b896bef3968426bb00896cf4ae7d440fed2cee7bb4e0dbc90362f024ea3f9e27ab1
-  languageName: node
-  linkType: hard
-
-"@protobuf-ts/plugin-framework@npm:^2.9.4":
-  version: 2.9.4
-  resolution: "@protobuf-ts/plugin-framework@npm:2.9.4"
-  dependencies:
-    "@protobuf-ts/runtime": ^2.9.4
-    typescript: ^3.9
-  checksum: 6f3ea86e266b289f8d7080299209223a1366821371bd682920accf9f27135230dbd6c4c016d569c751c982d52cb6a7f94ea09d9e223f68f2c67e0a05e8460159
-  languageName: node
-  linkType: hard
-
-"@protobuf-ts/plugin@npm:^2.7.0":
-  version: 2.9.4
-  resolution: "@protobuf-ts/plugin@npm:2.9.4"
-  dependencies:
-    "@protobuf-ts/plugin-framework": ^2.9.4
-    "@protobuf-ts/protoc": ^2.9.4
-    "@protobuf-ts/runtime": ^2.9.4
-    "@protobuf-ts/runtime-rpc": ^2.9.4
-    typescript: ^3.9
-  bin:
-    protoc-gen-dump: bin/protoc-gen-dump
-    protoc-gen-ts: bin/protoc-gen-ts
-  checksum: 06e1dd4ee4147e8d2d5141d4630366a0fdbc150921d4f99c5bded8ec2f22fb4a2abdd6a8e576db932c0946f6e70d69d3557340a67e68432f98e3494bacc95db2
-  languageName: node
-  linkType: hard
-
-"@protobuf-ts/protoc@npm:^2.9.4":
-  version: 2.9.4
-  resolution: "@protobuf-ts/protoc@npm:2.9.4"
-  bin:
-    protoc: protoc.js
-  checksum: 1ea82e1f323af8b89042c915e5ac492b56d2cfedf667149f5b6b7d138ca5e8e105820c8bf462273949c24e7ceef0cd03abaff04406eb60ce9b9f4cd0cfc08933
-  languageName: node
-  linkType: hard
-
-"@protobuf-ts/runtime-rpc@npm:^2.9.4":
-  version: 2.9.4
-  resolution: "@protobuf-ts/runtime-rpc@npm:2.9.4"
-  dependencies:
-    "@protobuf-ts/runtime": ^2.9.4
-  checksum: a457c981aef71b5121b1f5a1a3e49510fd42017c7a88d75c60b3ba425a3fab886f8e89e8987f601c0585fdbcdeb4dc6c616ad6c8c0cae8b822cd9c0387d77345
-  languageName: node
-  linkType: hard
-
-"@protobuf-ts/runtime@npm:^2.9.4":
-  version: 2.9.4
-  resolution: "@protobuf-ts/runtime@npm:2.9.4"
-  checksum: de9e8bd47ef15539df6bccaa3e7bc7b6b198062eea8bf888eadf09208f377b9915969a17764106179228ae027ebaf390c4642261e623abd87b0c373fd7bf58b8
   languageName: node
   linkType: hard
 
@@ -6436,13 +6423,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bech32@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "bech32@npm:2.0.0"
-  checksum: fa15acb270b59aa496734a01f9155677b478987b773bf701f465858bf1606c6a970085babd43d71ce61895f1baa594cb41a2cd1394bd2c6698f03cc2d811300e
-  languageName: node
-  linkType: hard
-
 "better-opn@npm:^2.1.1":
   version: 2.1.1
   resolution: "better-opn@npm:2.1.1"
@@ -6486,13 +6466,6 @@ __metadata:
     inherits: ^2.0.4
     readable-stream: ^3.4.0
   checksum: 9e8521fa7e83aa9427c6f8ccdcba6e8167ef30cc9a22df26effcc5ab682ef91d2cbc23a239f945d099289e4bbcfae7a192e9c28c84c6202e710a0dfec3722662
-  languageName: node
-  linkType: hard
-
-"blakejs@npm:^1.2.1":
-  version: 1.2.1
-  resolution: "blakejs@npm:1.2.1"
-  checksum: d699ba116cfa21d0b01d12014a03e484dd76d483133e6dc9eb415aa70a119f08beb3bcefb8c71840106a00b542cba77383f8be60cd1f0d4589cb8afb922eefbe
   languageName: node
   linkType: hard
 
@@ -11028,13 +11001,6 @@ __metadata:
     merge2: ^1.4.1
     slash: ^3.0.0
   checksum: b4be8885e0cfa018fc783792942d53926c35c50b3aefd3fdcfb9d22c627639dc26bd2327a40a0b74b074100ce95bb7187bfeae2f236856aa3de183af7a02aea6
-  languageName: node
-  linkType: hard
-
-"google-protobuf@npm:^3.21.2":
-  version: 3.21.2
-  resolution: "google-protobuf@npm:3.21.2"
-  checksum: 3caa2e1e2654714cc1a201ac5e5faabcaa48f5fba3d8ff9b64ca66fe19e4e0506b94053f32eddc77bf3a7a47ac1660315c6744185c1e2bb27654fd76fe91b988
   languageName: node
   linkType: hard
 
@@ -16444,7 +16410,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "root@workspace:."
   dependencies:
-    "@klever/sdk": ^4.2.2
     "@lavamoat/allow-scripts": ^3.0.0
     "@lavamoat/preinstall-always-fail": ^2.0.0
     "@metamask/eslint-config": ^12.2.0
@@ -16985,18 +16950,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< Updated upstream
 "snap@workspace:packages/snap":
   version: 0.0.0-use.local
   resolution: "snap@workspace:packages/snap"
   dependencies:
     "@jest/globals": ^29.5.0
-    "@klever/sdk": ^4.2.2
     "@metamask/auto-changelog": ^3.4.4
     "@metamask/eslint-config": ^12.2.0
     "@metamask/eslint-config-jest": ^12.1.0
     "@metamask/eslint-config-nodejs": ^12.1.0
     "@metamask/eslint-config-typescript": ^12.1.0
-    "@metamask/key-tree": ^9.0.0
     "@metamask/snaps-cli": ^6.1.0
     "@metamask/snaps-jest": ^6.0.2
     "@metamask/snaps-sdk": ^3.2.0
@@ -17020,6 +16984,8 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+=======
+>>>>>>> Stashed changes
 "socket.io-adapter@npm:~2.5.2":
   version: 2.5.4
   resolution: "socket.io-adapter@npm:2.5.4"
@@ -18265,16 +18231,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^3.9":
-  version: 3.9.10
-  resolution: "typescript@npm:3.9.10"
-  bin:
-    tsc: bin/tsc
-    tsserver: bin/tsserver
-  checksum: 46c842e2cd4797b88b66ef06c9c41dd21da48b95787072ccf39d5f2aa3124361bc4c966aa1c7f709fae0509614d76751455b5231b12dbb72eb97a31369e1ff92
-  languageName: node
-  linkType: hard
-
 "typescript@npm:^4.7.4":
   version: 4.7.4
   resolution: "typescript@npm:4.7.4"
@@ -18282,16 +18238,6 @@ __metadata:
     tsc: bin/tsc
     tsserver: bin/tsserver
   checksum: 5750181b1cd7e6482c4195825547e70f944114fb47e58e4aa7553e62f11b3f3173766aef9c281783edfd881f7b8299cf35e3ca8caebe73d8464528c907a164df
-  languageName: node
-  linkType: hard
-
-"typescript@patch:typescript@^3.9#~builtin<compat/typescript>":
-  version: 3.9.10
-  resolution: "typescript@patch:typescript@npm%3A3.9.10#~builtin<compat/typescript>::version=3.9.10&hash=7ad353"
-  bin:
-    tsc: bin/tsc
-    tsserver: bin/tsserver
-  checksum: dc7141ab555b23a8650a6787f98845fc11692063d02b75ff49433091b3af2fe3d773650dea18389d7c21f47d620fb3b110ea363dab4ab039417a6ccbbaf96fc2
   languageName: node
   linkType: hard
 
